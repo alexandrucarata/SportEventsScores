@@ -1,0 +1,169 @@
+﻿<UserControl x:Class="TennisScore.MVVM.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TennisScore.MVVM.View" 
+             xmlns:viewModel="clr-namespace:TennisScore.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="470" d:DesignWidth="800">
+
+    
+    <StackPanel>
+        <TextBlock Text="Discover"
+                   FontWeight="SemiBold"
+                   FontFamily="/Fonts/#Poppins"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,10"/>
+
+        <StackPanel Orientation="Horizontal"
+                    Margin="0,0,0,10">
+            <Border Width="420"
+                    Height="200">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#0cb9c7" Offset="0.0"/>
+                        <GradientStop Color="#3693eb" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,420,200"/>
+                </Border.Clip>
+
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Biggest Sport&#x0a;Events of 2021"
+                                   Foreground="White"
+                                   FontSize="28"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Margin="20,10,10,0"/>
+                        <TextBlock Text="Curious to see the results?"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Margin="20,10,10,0"/>
+                    </StackPanel>
+                    <Image Width="211" 
+                           Height="212" 
+                           Source="/Images/Sports.png"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom" 
+                           Margin="0,0,-40,-19" 
+                           RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-14.019"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+                </Grid>
+
+            </Border>
+            <Border Width="240" 
+                    Height="200"
+                    CornerRadius="30"
+                    Margin="40,0,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#FFFF7F37" Offset="0.0"/>
+                        <GradientStop Color="#fd2a36" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel>
+                    <TextBlock Text="Australian Open"
+                                   Foreground="White"
+                                   FontSize="22"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Margin="20,20,5,20"/>
+                    <TextBlock Text="NBA Finals"
+                                   Foreground="White"
+                                   FontSize="22"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Margin="20,5,5,20"/>
+                    <TextBlock Text="UEFA Euro"
+                                   Foreground="White"
+                                   FontSize="22"
+                                   FontFamily="/Fonts/#Poppins"
+                                   Margin="20,5,5,20"/>
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+
+        <StackPanel>
+
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="20,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <TextBlock Text="Featured Sports"
+                       FontWeight="SemiBold"
+                       FontFamily="/Fonts/#Poppins"
+                       Foreground="White"
+                       FontSize="20"
+                       HorizontalAlignment="Left"
+                       Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal">
+                <Border Width="220"
+                        Height="150"
+                        Background="#fc6b3f"
+                        CornerRadius="10"
+                        Margin="0">
+                    <Image x:Name="tennisBall"
+                           Width="80" 
+                           Height="80" 
+                           Source="/Images/tBall.png"
+                           Cursor="Hand"
+                           ToolTip="Australian Open"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center">
+                        <Image.InputBindings>
+                            <MouseBinding Gesture="LeftClick"
+                                          Command="{Binding TennisViewCommand}"/>
+                        </Image.InputBindings>
+                    </Image>
+                </Border>
+
+                <Border Width="220"
+                        Height="150"
+                        Background="#1873cb" 
+                        CornerRadius="10">
+                    <Image x:Name="basketBall"
+                           
+                           Width="80"  
+                           Height="80"  
+                           Source="/Images/bBall.png"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                </Border>
+                
+                <Border Width="220"
+                        Height="150"
+                        Background="#69d4dc"
+                        CornerRadius="10">
+                    <Image x:Name="footBall"
+                           
+                           Width="80" 
+                           Height="80" 
+                           Source="/Images/fBall.png"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                </Border>
+                
+            </StackPanel>
+            
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>
