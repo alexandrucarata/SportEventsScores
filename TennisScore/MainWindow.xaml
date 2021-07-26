@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TennisScore"
         xmlns:viewModel="clr-namespace:TennisScore.MVVM.ViewModel"
         mc:Ignorable="d"
         Height="600" Width="950"
@@ -15,7 +14,6 @@
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-
 
     <Border Background="#0d467d" CornerRadius="20">
         <Grid>
@@ -45,6 +43,8 @@
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
+                             Cursor="Hand"
+                             ToolTip="Home"
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}"/>
                 <RadioButton Content="Tennis"
@@ -53,6 +53,8 @@
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
+                             Cursor="Hand"
+                             ToolTip="Australian Open"
                              Command="{Binding TennisViewCommand}"/>
                 <RadioButton Content="Basketball"
                              FontWeight="Bold"
@@ -60,6 +62,8 @@
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
+                             Cursor="Hand"
+                             ToolTip="NBA Finals"
                              Command="{Binding BasketballViewCommand}"/>
                 <RadioButton Content="Football"
                              FontWeight="Bold"
@@ -67,6 +71,8 @@
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
+                             Cursor="Hand"
+                             ToolTip="UEFA Euro"
                              Command="{Binding FootballViewCommand}"/>
             </StackPanel>
 
